@@ -6,3 +6,15 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [tailwindcss(),react()],
 })
+
+module.exports = {
+    theme: {
+      extend: {
+        fontFamily: {
+          outfit: ['Outfit', 'sans-serif'],
+        },
+      },
+    },
+    plugins: [],
+  };
+  
