@@ -4,17 +4,17 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(),react()],
-})
-
-module.exports = {
-    theme: {
-      extend: {
-        fontFamily: {
-          outfit: ['Outfit', 'sans-serif'],
-        },
+  plugins: [tailwindcss(), react()],
+  css: {
+    postcss: {
+      plugins: [],
+    },
+  },
+  theme: {
+    extend: {
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
       },
     },
-    plugins: [],
-  };
-  
+  },
+});
