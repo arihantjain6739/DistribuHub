@@ -1,13 +1,16 @@
 import React from "react";
-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Navbar = () => {
   return (
     <nav className="bg-black text-white p-4 flex justify-between items-center">
       <div className="flex items-center">
-        <button className="text-white text-2xl mr-4">
-          <i className="fas fa-bars"></i>
+        <button className="text-white text-2xl mr-4 h-9 w-9">
+          <img src="/src/assets/menu.png" className="h-7    " />
         </button>
-        <span className="text-xl font-bold">DumbHub</span>
+        <span className="text-xl font-bold">DistribuHub</span>
       </div>
       <div className="hidden md:flex space-x-8">
         <a href="#" className="hover:text-gray-400 font-bold">About Us</a>
@@ -28,7 +31,7 @@ return (
       <div className="relative max-w-md mx-auto ">
         <input
           type="text"
-          className="w-full p-4 rounded-full text-black bg-amber-50 border-amber-50"
+          className="w-full p-4 rounded-full text-black bg-white border-white"
           placeholder="What are you looking for?"
         />
         <button className="absolute right-0 top-0 mt-2 mr-2 bg-black text-white p-3 rounded-full">
@@ -51,9 +54,9 @@ return (
 
 const BestSelling = () => {
     const products = [
-        { name: "Natural Plants", price: "₹ 1,400.00", img: "https://kyari.co/cdn/shop/files/1_50af0302-1f20-4697-b0c4-52c22ce8f03a.jpg?crop=center&height=1000&v=1737106779&width=840" },
-        { name: "Artificial Plants", price: "₹ 900.00", img: "https://kyari.co/cdn/shop/files/1_8ebe093b-fd16-4d80-a698-925b4cfbda81.jpg?crop=center&height=1000&v=1736857996&width=840" },
-        { name: "Decorative Artificial Plants", price: "₹ 3,500.00", img: "https://kyari.co/cdn/shop/files/Artboard_1_c85d58a8-bb68-4a8c-8447-6fccd5566d18.jpg?crop=center&height=1008&v=1733728943&width=840" },
+        { name: "Natural Plants", price: "₹ 1,400.00", img: "/src/assets/img2.jpg" },
+        { name: "Artificial Plants", price: "₹ 900.00", img: "/src/assets/img3.jpg" },
+        { name: "Decorative Artificial Plants", price: "₹ 3,500.00", img: "/src/assets/img4.jpg" },
     ];
 
     return (
@@ -147,23 +150,24 @@ const Categories = () => {
   
     return (
         <div>
-           <div className="my-56 flex flex-col items-center">
+           <div className="relative my-32 bottom-16 flex flex-col items-center">
              <h1 className="text-4xl font-bold ">Categories</h1>
             <p className="text-gray-400 text-lg">Find what you are looking for</p>
            </div>
             <div className="bg-black text-white min-h-screen flex flex-col items-center my-20">
         
        
-        <div className="flex flex-wrap justify-center gap-8 px-8 mt-20">
+        <div className="flex flex-wrap justify-center gap-48 px-8 mt-20">
           {categories.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg w-80">
-              <img src={category.image} alt={category.name} className="w-full h-64 object-cover" />
+            <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg w-64 scale-125 ">
+              <img src={category.image} alt={category.name} className="w-full h-96 object-cover" />
               <div className="p-4 text-center">
                 <p className="text-black font-semibold">{category.name}</p>
                 <p className="text-gray-500 text-sm">{category.description}</p>
               </div>
             </div>
           ))}
+           <button className="relative bg-white text-black px-8 py-4 rounded-full bottom-12 font-bold">Explore</button>
         </div>
       </div>
         </div>
@@ -174,10 +178,16 @@ const Categories = () => {
  
   const Footer = () => {
     return (
-      <footer className="bg-black text-white p-8 md:p-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-black text-gray-400 p-8 md:p-10 flex justify-end h-72">
+        <div className="container mx-auto">
+            <p className="text-gray-400">We help you find your dream plant</p>
+            <button>
+                <i className="fab fa-facebook text-white"></i>
+            </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 ">
           <div>
-            <h3 className="text-xl font-bold mb-4">Information</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Information</h3>
             <ul>
               <li><a href="#" className="hover:text-gray-400">About</a></li>
               <li><a href="#" className="hover:text-gray-400">Product</a></li>
@@ -186,7 +196,7 @@ const Categories = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Company</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Company</h3>
             <ul>
               <li><a href="#" className="hover:text-gray-400">Community</a></li>
               <li><a href="#" className="hover:text-gray-400">Career</a></li>
@@ -195,7 +205,7 @@ const Categories = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
             <ul>
               <li><a href="#" className="hover:text-gray-400">Getting Started</a></li>
               <li><a href="#" className="hover:text-gray-400">Pricing</a></li>
