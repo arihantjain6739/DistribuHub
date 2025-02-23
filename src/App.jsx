@@ -3,18 +3,18 @@ import React, { useRef } from "react";
 
 const Navbar = ({ scrollToSection }) => {
     return (
-        <nav className="bg-black  text-white p-4 flex justify-between items-center">
+        <nav className="bg-black text-white p-4 flex justify-between items-center font-outfit">
             <div className="flex items-center">
                 <button className="text-white text-2xl mr-4 h-9 w-9">
-                    <img src="/src/assets/menu.png" className="h-7" />
+                    <img src="/src/assets/menu.png" className="h-5" />
                 </button>
-                <span className="text-lg font-semibold font-outfi">DistribuHub</span>
+                <span className="text-lg font-semibold">DistribuHub</span>
             </div>
             <div className="hidden md:flex space-x-8">
-                <a href="#" className="hover:text-gray-400 font-bold" onClick={() => scrollToSection('aboutUs')}>About Us</a>
-                <a href="#" className="hover:text-gray-400 font-bold" onClick={() => scrollToSection('categories')}>Categories</a>
+                <a href="#" className="hover:text-gray-400 font-medium" onClick={() => scrollToSection('aboutUs')}>About Us</a>
+                <a href="#" className="hover:text-gray-400 font-medium" onClick={() => scrollToSection('categories')}>Categories</a>
             </div>
-            <button className="bg-white text-black px-4 py-2 rounded-4xl font-bold justify-center">Sign In</button>
+            <button className="bg-white text-black px-4 py-2 rounded-2xl font-bold">Sign In</button>
         </nav>
     );
 };
@@ -33,7 +33,7 @@ const Hero = () => {
                         className="w-full p-4 rounded-full text-black bg-white border-white"
                         placeholder="What are you looking for?"
                     />
-                    <button className="absolute right-0 top-0 mt-2 mr-2 bg-black text-white p-3 rounded-full">
+                    <button className="absolute flex right-1 top-1 mt-2 mr-2 bg-black  items-end text-white p-4 rounded-full bg-[url('/src/assets/search.png')] ">
                         <i className="fas fa-search"></i>
                     </button>
                 </div>
@@ -66,13 +66,13 @@ const BestSelling = () => {
                 <h2 className="text-2xl md:text-4xl font-bold mb-4">Best Selling Plants</h2>
                 <p className="text-lg mb-8">Easiest way to a healthy life by buying <br />
                     your favorite plants</p>
-                <button className="bg-black text-white px-8 py-4 rounded-full">See more</button>
+                <button className="bg-black border-black border-2 text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300">See more</button>
             </div>
             <div className="scale-105">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {products.map((product, index) => (
                         <div key={index} className="text-left mx-6">
-                            <img src={product.img} alt={product.name} className="mx-auto mb-4 rounded-lg" width="400" height="300" />
+                            <img src={product.img} alt={product.name} className="mx-auto mb-4 rounded-lg hover:opacity-80 transition duration-300" width="400" height="300" />
                             <h3 className="text-xl font-bold">{product.name}</h3>
                             <p className="text-gray-400 font-bold">{product.price}</p>
                         </div>
@@ -164,7 +164,7 @@ const Categories = React.forwardRef((props, ref) => {
                             </div>
                         </div>
                     ))}
-                    <button className="relative bg-white text-black px-8 py-4 rounded-full bottom-12 font-bold">Explore</button>
+                    <button className="relative bg-white text-black px-8 py-4 rounded-full bottom-12 font-bold border-2 border-white hover:bg-black hover:text-white transition duration-300">Explore</button>
                 </div>
             </div>
         </div>
@@ -176,104 +176,98 @@ const Footer = () => {
         <div className="relative h-[400px] bg-black">
             <div className="inline-flex flex-col items-center gap-6 absolute top-12 left-24">
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-normal text-black text-lg tracking-[0] leading-[normal]">
+                    <div className="relative w-fit mt-[-1.00px] font-normal text-white text-lg tracking-[0] leading-[normal]">
                         DistribuHub
                     </div>
 
-                    <p className="relative w-[189px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <p className="relative w-[189px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal] py-2.5">
                         We help you find your dream plant
                     </p>
                 </div>
 
                 <div className="inline-flex items-center gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-12 h-12">
-                        <div className="relative h-12 rounded-3xl">
-                            <img
-                                className="absolute w-5 h-5 top-3.5 left-3.5"
-                                alt="Gg facebook"
-                                src="https://c.animaapp.com/bqaaf23R/img/gg-facebook.svg"
-                            />
+                    <button className="relative w-12 h-12 rounded-3xl border border-solid border-[#ffffff80] hover:bg-gray-600 hover:text-black duration-300">
+                        <img
+                            className="absolute w-5 h-5 top-3.5 left-3.5 "
+                            alt="Gg facebook"
+                            src="https://c.animaapp.com/bqaaf23R/img/gg-facebook.svg"
+                        />
+                    </button>
 
-                            <div className="absolute w-12 h-12 top-0 left-0 rounded-3xl border border-solid border-[#ffffff80]" />
-                        </div>
-                    </div>
-
-                    <div className="rounded-3xl border border-solid border-[#ffffff80] relative w-12 h-12">
+                    <button className="rounded-3xl border border-solid border-[#ffffff80] relative w-12 h-12 hover:bg-gray-600 hover:text-black duration-300">
                         <img
                             className="absolute w-5 h-5 top-[13px] left-[13px]"
                             alt="Ri instagram fill"
                             src="https://c.animaapp.com/bqaaf23R/img/ri-instagram-fill.svg"
                         />
-                    </div>
+                    </button>
 
-                    <div className="rounded-3xl border border-solid border-[#ffffff80] relative w-12 h-12">
+                    <button className="rounded-3xl border border-solid border-[#ffffff80] relative w-12 h-12 hover:bg-gray-600 hover:text-black duration-300">
                         <img
                             className="absolute w-5 h-4 top-[15px] left-[13px]"
                             alt="Vector"
                             src="https://c.animaapp.com/bqaaf23R/img/vector.svg"
                         />
-                    </div>
+                    </button>
                 </div>
             </div>
 
-            <div className="inline-flex items-start gap-12 absolute top-12 left-[892px]">
+            <div className="inline-flex items-start gap-12 absolute top-12 left-[892px] py-12">
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
                     <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal]">
                         Information
                     </div>
 
-                    <div className="relative w-fit font-normal text-[#fffbfb80] text-lg tracking-[0] leading-[normal]">
-                        About
-                    </div>
+                    <button className="relative w-fit font-normal text-[#fffbfb80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">About</button>
 
-                    <div className="relative w-fit font-normal text-[#fff7f780] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#fff7f780] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Product
-                    </div>
+                    </button>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Blog
-                    </div>
+                    </button>
                 </div>
 
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal]">
+                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal duration-300]">
                         Company
                     </div>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Community
-                    </div>
+                    </button>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Career
-                    </div>
+                    </button>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Our story
-                    </div>
+                    </button>
                 </div>
 
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal]">
+                    <div className="relative w-fit mt-[-1.00px] font-bold text-white text-lg tracking-[0] leading-[normal] duration-300">
                         Contact
                     </div>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Getting Started
-                    </div>
+                    </button>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Pricing
-                    </div>
+                    </button>
 
-                    <div className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
+                    <button className="relative w-fit font-normal text-[#ffffff80] text-lg tracking-[0] leading-[normal] hover:text-white duration-300">
                         Resources
-                    </div>
+                    </button>
                 </div>
             </div>
 
             <p className="absolute top-[324px] left-[97px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
-                2023                All Right Reserved Term of use DistribuHub
+                2023 All Right Reserved Term of use DistribuHub
             </p>
         </div>
     );
