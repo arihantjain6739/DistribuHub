@@ -8,7 +8,7 @@ const Navbar = ({ scrollToSection }) => {
                 <button className="text-white text-2xl mr-4 h-9 w-9">
                     <img src="/src/assets/menu.png" className="h-7" />
                 </button>
-                <span className="text-xl font-bold">DistribuHub</span>
+                <span className="text-lg font-semibold font-outfi">DistribuHub</span>
             </div>
             <div className="hidden md:flex space-x-8">
                 <a href="#" className="hover:text-gray-400 font-bold" onClick={() => scrollToSection('aboutUs')}>About Us</a>
@@ -21,11 +21,13 @@ const Navbar = ({ scrollToSection }) => {
 
 const Hero = () => {
     return (
-        <section className="bg-white text-black p-8 md:p-16 text-center">
-            <div className="bg-black text-white p-8 md:p-16 rounded-4xl">
+        <section className="bg-white text-black p-8 md:p-16 ">
+            <div className="bg-black text-white p-8 md:p-16 rounded-4xl flex">
+                <div>
+                <div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">Buy your dream plants</h1>
                 <p className="text-lg md:text-xl mb-8">50+ Plant Species | 100+ Customers</p>
-                <div className="relative max-w-md mx-auto">
+                <div className="relative max-w-md">
                     <input
                         type="text"
                         className="w-full p-4 rounded-full text-black bg-white border-white"
@@ -34,6 +36,9 @@ const Hero = () => {
                     <button className="absolute right-0 top-0 mt-2 mr-2 bg-black text-white p-3 rounded-full">
                         <i className="fas fa-search"></i>
                     </button>
+                </div>
+                </div>
+                
                 </div>
                 <div className="mt-8">
                     <img
@@ -168,7 +173,7 @@ const Categories = React.forwardRef((props, ref) => {
 
 const Footer = () => {
     return (
-        <div className="relative w-[1440px] h-[400px] bg-black">
+        <div className="relative h-[400px] bg-black">
             <div className="inline-flex flex-col items-center gap-6 absolute top-12 left-24">
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
                     <div className="relative w-fit mt-[-1.00px] font-normal text-black text-lg tracking-[0] leading-[normal]">
@@ -332,7 +337,7 @@ const PlantShop = () => {
     };
 
     return (
-        <div>
+        <div className="font-outfit">
             <Navbar scrollToSection={scrollToSection} />
             <Hero />
             <BestSelling />
