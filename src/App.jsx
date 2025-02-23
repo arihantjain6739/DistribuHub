@@ -11,10 +11,10 @@ const Navbar = ({ scrollToSection }) => {
                 <span className="text-lg font-semibold">DistribuHub</span>
             </div>
             <div className="hidden md:flex space-x-8">
-                <a href="#" className="hover:text-gray-400 font-medium" onClick={() => scrollToSection('aboutUs')}>About Us</a>
-                <a href="#" className="hover:text-gray-400 font-medium" onClick={() => scrollToSection('categories')}>Categories</a>
+                <a href="#" className="hover:text-gray-400 font-extralight" onClick={() => scrollToSection('aboutUs')}>About Us</a>
+                <a href="#" className="hover:text-gray-400 font-extralight" onClick={() => scrollToSection('categories')}>Categories</a>
             </div>
-            <button className="bg-white text-black px-4 py-2 rounded-2xl font-bold">Sign In</button>
+            <button className="bg-white text-black px-5 py-1.5 rounded-2xl font-extralight">Sign In</button>
         </nav>
     );
 };
@@ -33,7 +33,7 @@ const Hero = () => {
                         className="w-full p-4 rounded-full text-black bg-white border-white"
                         placeholder="What are you looking for?"
                     />
-                    <button className="absolute flex right-1 top-1 mt-2 mr-2 bg-black  items-end text-white p-4 rounded-full bg-[url('/src/assets/search.png')] ">
+                    <button className="absolute flex right-1 top-1 mt-2 mr-2 bg-white items-end text-white p-4 rounded-full bg-[url('/src/assets/search.png')] hover:bg-white hover:text-black transition duration-300">
                         <i className="fas fa-search"></i>
                     </button>
                 </div>
