@@ -22,7 +22,7 @@ const Navbar = ({ scrollToSection }) => {
 const Hero = () => {
     return (
         <section className="bg-white text-black p-8 md:p-16 ">
-            <div className="bg-black text-white p-8 md:p-16 rounded-4xl flex">
+            <div className="bg-black text-white p-8 md:p-28 rounded-4xl flex">
                 <div>
                 <div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">Buy your dream plants</h1>
@@ -43,9 +43,9 @@ const Hero = () => {
                 <div className="mt-8">
                     <img
                         src="/src/assets/img1.jpg"
-                        className="mx-auto rounded-full"
+                        className="relative mx-32 scale-150 bottom-10"
                         width="300"
-                        height="300"
+                        height="500"
                     />
                 </div>
             </div>
@@ -132,17 +132,17 @@ const Categories = React.forwardRef((props, ref) => {
     const categories = [
         {
             name: "Natural Plants",
-            image: "https://storage.googleapis.com/a1aa/image/SvUeajlBYNByAR1NRGO2_XPNwyfGKCSSUgSINiS5qPY.jpg",
+            image: "/src/assets/img5.jpg",
             description: "A collection of small potted plants on a wooden surface.",
         },
         {
             name: "Plant Accessories",
-            image: "https://storage.googleapis.com/a1aa/image/iXbrdByia9TnHh5oOP8IWAluSHuRKau0IoX34eGTwaY.jpg",
+            image: "/src/assets/img6.jpg",
             description: "Horem ipsum dolor sit amet, consectetur adipiscing elit.",
         },
         {
             name: "Artificial Plants",
-            image: "https://storage.googleapis.com/a1aa/image/gCWfe9VywydL3vMFdlrARimeDnd1TIF0_70P5D0XIcQ.jpg",
+            image: "/src/assets/img7.jpg",
             description: "A collection of artificial plants in a modern living room.",
         },
     ];
@@ -177,7 +177,7 @@ const Footer = () => {
             <div className="inline-flex flex-col items-center gap-6 absolute top-12 left-24">
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
                     <div className="relative w-fit mt-[-1.00px] font-normal text-black text-lg tracking-[0] leading-[normal]">
-                        GREENMIND
+                        DistribuHub
                     </div>
 
                     <p className="relative w-[189px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
@@ -273,7 +273,7 @@ const Footer = () => {
             </div>
 
             <p className="absolute top-[324px] left-[97px] font-medium text-[#ffffff80] text-lg tracking-[0] leading-[normal]">
-                2023 all Right Reserved Term of use GREENMIND
+                2023                All Right Reserved Term of use DistribuHub
             </p>
         </div>
     );
@@ -283,40 +283,42 @@ const Testimonials = () => {
     const testimonials = [
         {
             text: "Great selection of plants and amazing customer service!",
-            name: "Arihant Jain",
+            name: "Alex Johnson",
             role: "Customer",
-            image: "https://placehold.co/100x100",
+            image: "/src/assets/pfp2.jpg",
             rating: 5,
         },
         {
             text: "Fast shipping and high-quality plants. Highly recommend!",
-            name: "Jane Smith",
+            name: "Adam Smith",
             role: "Customer",
-            image: "https://placehold.co/100x100",
+            image: "/src/assets/pfp2.jpg",
             rating: 4.5,
         },
     ];
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-4">
-                What customers say about <span className="text-black">GREEMIND?</span>
+        <div className="container mx-auto px-10 py-40">
+            <h1 className="text-3xl font-bold mb-4 ">
+                What customers say about <span className="text-black py-5">DistribuHub?</span>
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {testimonials.map((testimonial, index) => (
-                    <div key={index} className="bg-black text-white p-6 flex flex-col justify-between rounded-4xl">
-                        <p className="mb-4 rounded-4xl">{testimonial.text}</p>
+                    <div key={index} className="bg-black text-white p-9 py-20 flex flex-col justify-between rounded-4xl">
+                        
                         <div className="flex items-center rounded-4xl">
-                            <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4" />
+                            <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4 object-fill" />
+                            
                             <div>
                                 <p className="font-bold">{testimonial.name}</p>
                                 <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                            </div>
+                            </div>    
                             <div className="ml-auto flex items-center rounded-4xl">
                                 <i className="fas fa-star text-yellow-500"></i>
                                 <span className="ml-2">{testimonial.rating}</span>
                             </div>
                         </div>
+                        <p className="mb-4 py-4 rounded-4xl ">{testimonial.text}</p>
                     </div>
                 ))}
             </div>
