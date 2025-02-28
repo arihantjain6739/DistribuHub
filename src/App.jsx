@@ -6,7 +6,7 @@ const Navbar = ({ scrollToSection }) => {
         <nav className="bg-black text-white p-4 flex justify-between items-center font-outfit">
             <div className="flex items-center">
                 <button className="text-white text-2xl mr-4 h-9 w-9">
-                    <img src="/src/assets/menu.png" className="h-5" />
+                    <img src="/src/assets/logo.jpg" className="h-5" />
                 </button>
                 <span className="text-lg font-semibold">DistribuHub</span>
             </div>
@@ -149,12 +149,12 @@ const Categories = React.forwardRef((props, ref) => {
 
     return (
         <div ref={ref} className="bg-black ">
-            <div className="relative py-10 bottom-16 flex flex-col items-center bg-black">
-                <h1 className="text-4xl font-bold bg-black text-white my-2.5">Categories</h1>
+            <div className="relative  py-10 pt-28 bottom-16 flex flex-col items-center bg-black">
+                <h1 className="text-4xl font-bold bg-black text-white ">Categories</h1>
                 <p className="text-gray-400 text-lg bg-black">Find what you are looking for</p>
             </div>
             <div className="bg-black text-white min-h-screen flex flex-col items-center">
-                <div className="flex flex-wrap justify-center gap-48 px-8 mt-20">
+                <div className="flex flex-wrap justify-center gap-48 px-8">
                     {categories.map((category, index) => (
                         <div key={index} className="bg-black rounded-lg overflow-hidden shadow-lg w-64 scale-125">
                             <img src={category.image} alt={category.name} className="w-full h-96 object-cover rounded-3xl" />
@@ -164,7 +164,7 @@ const Categories = React.forwardRef((props, ref) => {
                             </div>
                         </div>
                     ))}
-                    <button className="relative bg-white text-black px-8 py-4 rounded-full bottom-12 font-bold border-2 border-white hover:bg-black hover:text-white transition duration-300">Explore</button>
+                    <button className="relative bg-white text-black px-8 py-4 rounded-full bottom-28 font-bold border-2 border-white hover:bg-black hover:text-white transition duration-300">Explore</button>
                 </div>
             </div>
         </div>
